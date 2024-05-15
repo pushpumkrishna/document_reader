@@ -4,7 +4,7 @@ from llama_index.core import VectorStoreIndex
 from llama_index.core.callbacks import LlamaDebugHandler, CallbackManager
 from llama_index.vector_stores.pinecone import PineconeVectorStore
 from dotenv import load_dotenv
-from pinecone import Pinecone, ServerlessSpec
+from pinecone import Pinecone
 
 load_dotenv()
 pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])

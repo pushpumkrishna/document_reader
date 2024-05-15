@@ -1,4 +1,3 @@
-import os
 from dotenv import load_dotenv
 from llama_index.core import VectorStoreIndex
 from llama_index.readers.web import SimpleWebPageReader

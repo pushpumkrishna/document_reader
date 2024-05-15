@@ -13,8 +13,7 @@ from llama_index.core import (
     StorageContext,
 )
 from llama_index.vector_stores.pinecone import PineconeVectorStore
-from pinecone import Pinecone, ServerlessSpec
-import nltk
+from pinecone import Pinecone
 
 # nltk.download('averaged_perceptron_tagger')
 
