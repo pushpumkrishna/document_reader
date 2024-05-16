@@ -15,8 +15,8 @@ def extract_html_pages(url):
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Create a directory to store HTML pages if it doesn't exist
-        if not os.path.exists("html_pages"):
-            os.makedirs("html_pages")
+        if not os.path.exists("./html_pages"):
+            os.makedirs("./html_pages")
 
         # Extract and save all HTML pages
         for link in soup.find_all("a", href=True):
@@ -59,14 +59,17 @@ def save_html_to_file(html_content, file_path):
         file.write(str(html_content))
 
 
-# URL of the Wikipedia page you want to fetch
-wiki_url = "https://en.wikipedia.org/wiki/India"
-# Call the fetch_wikipedia_page function to fetch the page content
-page_soup = fetch_wikipedia_page(wiki_url)
+if __name__ == "__main__":
 
-if page_soup:
-    # Save the entire Wikipedia page as an HTML file
-    save_html_to_file(page_soup, "html_pages-tmp/wikipedia_page.html")
-    print("Wikipedia page saved successfully as 'wikipedia_page.html'.")
-else:
-    print("Failed to fetch Wikipedia page.")
+    # URL of the Wikipedia page you want to fetch
+    wiki_url = "https://en.wikipedia.org/wiki/India"
+    # Call the fetch_wikipedia_page function to fetch the page content
+    # page_soup = fetch_wikipedia_page(wiki_url)
+    extract_html_pages(wiki_url)
+
+    # if page_soup:
+    #     # Save the entire Wikipedia page as an HTML file
+    #     save_html_to_file(page_soup, "html_pages-tmp/wikipedia_page.html")
+    #     print("Wikipedia page saved successfully as 'wikipedia_page.html'.")
+    # else:
+    #     print("Failed to fetch Wikipedia page.")
