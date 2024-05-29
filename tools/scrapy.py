@@ -1,6 +1,6 @@
 import spacy
 from spacy.matcher import Matcher
-from pdf_reader import generate_summary
+from document_reader.pdf_reader import generate_summary
 
 nlp = spacy.load('en_core_web_sm')
 
@@ -14,7 +14,7 @@ entity_pattern = [
 for pattern in entity_pattern:
     entity_matcher.add("Entity", [pattern])
 
-chunks = generate_summary(pdf_path="./pdfs/")
+chunks = generate_summary(pdf_path="../data/pdfs/")
 # Process each text and extract entities
 for chunk in chunks:
     doc = nlp(chunk)

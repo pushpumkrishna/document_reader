@@ -2,7 +2,7 @@ from langchain.chains import LLMChain
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 
-from output_parsers import summary_parser, ice_breaker_parser, topics_of_interest_parser
+from tools.output_parsers import summary_parser, ice_breaker_parser, topics_of_interest_parser
 
 llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 llm_creative = ChatOpenAI(temperature=1, model_name="gpt-3.5-turbo")
