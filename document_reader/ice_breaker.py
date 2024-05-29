@@ -9,7 +9,7 @@ from chains.custom_chains import (
 from third_parties.linkedin import scrape_linkedin_profile
 
 from third_parties.twitter import scrape_user_tweets
-from output_parsers import (
+from tools.output_parsers import (
     summary_parser,
     topics_of_interest_parser,
     ice_breaker_parser,

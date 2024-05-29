@@ -29,7 +29,7 @@ pc = Pinecone(
 if __name__ == "__main__":
     print("Going to ingest pinecone documentation...")
     UnstructuredReader = download_loader("UnstructuredReader")
-    dir_reader = SimpleDirectoryReader(input_dir="./html_pages-tmp")
+    dir_reader = SimpleDirectoryReader(input_dir="../data/html_pages-tmp")
 
     documents = dir_reader.load_data()
     node_parser = SimpleNodeParser.from_defaults(chunk_size=500, chunk_overlap=20)

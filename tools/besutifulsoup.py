@@ -15,8 +15,8 @@ def extract_html_pages(url):
         soup = BeautifulSoup(response.text, "html.parser")
 
         # Create a directory to store HTML pages if it doesn't exist
-        if not os.path.exists("./html_pages"):
-            os.makedirs("./html_pages")
+        if not os.path.exists("../data/html_pages"):
+            os.makedirs("../data/html_pages")
 
         # Extract and save all HTML pages
         for link in soup.find_all("a", href=True):
@@ -28,7 +28,7 @@ def extract_html_pages(url):
                     # Save the HTML content to a file
                     filename = href.split("/")[-1]  # Extract filename from the URL
                     with open(
-                        f"html_pages/{filename}", "w", encoding="utf-8"
+                            f"data/html_pages/{filename}", "w", encoding="utf-8"
                     ) as html_file:
                         html_file.write(html_page_response.text)
                         print(f"HTML page '{filename}' saved successfully.")
